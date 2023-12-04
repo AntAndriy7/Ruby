@@ -40,9 +40,12 @@ class Organizer
 
   def reminders(today)
     upcoming_events = @events.select { |event| event.date >= today }
+
     if upcoming_events.empty?
       puts "\nNo upcoming reminders."
     else
+      upcoming_events = upcoming_events.sort_by(&:date)
+
       puts "\nUpcoming reminders:"
       upcoming_events.each do |event|
         puts "Reminder: #{event.title} is coming up on #{event.date}"
