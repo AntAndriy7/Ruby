@@ -1,3 +1,5 @@
+#Variant 2
+
 class Event
   attr_accessor :title, :date
 
